@@ -1,10 +1,6 @@
 const { Schema, model } = require('mongoose');
 
 const serviceOrderSchema = new Schema({
-    name: {
-        type: String,
-        required: true
-    },
     clientId: {
         type: String,
         required: true
