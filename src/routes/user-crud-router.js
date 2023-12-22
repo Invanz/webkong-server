@@ -56,6 +56,15 @@ router.post("/register", userExists, async (req, res) => {
   res.status(201).json(newUser);
 });
 
+router.post("/:id", async (req, res) => {
+  await connectDb();
+
+  const id = req.params;
+  const user = await UserCRUD.findUserById(id);
+
+  res.status(200).json(user.name);
+});
+
 router.post("/reset-password", userNotExists, async (req, res) => {
   // send email
   res.status(200).json({ message: "Verifique su email" });

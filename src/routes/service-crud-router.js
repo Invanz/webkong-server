@@ -38,7 +38,7 @@ router.delete("/:id", async (req, res) => {
 
     const {id} = req.params;
     const deletedService = await ServiceCRUD.deleteServiceById(id);
-
+    
     res.status(200).json(deletedService);
 
 });
